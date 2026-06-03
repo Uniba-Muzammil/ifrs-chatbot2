@@ -92,9 +92,7 @@ SESSION_COOKIE_SAMESITE = "Lax"     # allows frontend to send cookie
 # CSRF
 CSRF_COOKIE_HTTPONLY = False        # so axios can read it
 CSRF_COOKIE_SECURE = False
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
-]
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -122,13 +120,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', 'ifrs_chatbot_db'),
-        'USER': os.environ.get('DB_USER', 'root'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'pillow23@?kj.'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT', '3306'),
         'OPTIONS': {
-            'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'},
+            'ssl': {'ssl_disabled': False},
         },
     }
 }
