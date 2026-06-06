@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api",
+  baseURL: "https://ifrs-chatbot2-production.up.railway.app/api",
   withCredentials: true,
 });
+
 
 // Auth
 export const registerUser = (data) =>
