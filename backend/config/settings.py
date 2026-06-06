@@ -86,12 +86,13 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 # Session cookies
 SESSION_COOKIE_HTTPONLY = True      # ok
-SESSION_COOKIE_SECURE = False       # for http
-SESSION_COOKIE_SAMESITE = "Lax"     # allows frontend to send cookie
+SESSION_COOKIE_SECURE = True    # for http
+SESSION_COOKIE_SAMESITE = "None"     # allows frontend to send cookie
 
 # CSRF
 CSRF_COOKIE_HTTPONLY = False        # so axios can read it
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True          # for http
+CSRF_COOKIE_SAMESITE = "None"     # allows frontend to send cookie
 
 
 ROOT_URLCONF = 'config.urls'

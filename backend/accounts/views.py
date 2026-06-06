@@ -41,15 +41,15 @@ def login(request):
             key='access_token',
             value=str(refresh.access_token),
             httponly=True,
-            secure=False,  # True if using HTTPS in production
-            samesite='Lax'
+            secure=True,  # True if using HTTPS in production
+            samesite='None'
         )
         res.set_cookie(
             key='refresh_token',
             value=str(refresh),
             httponly=True,
-            secure=False,
-            samesite='Lax'
+            secure=True,
+            samesite='None'
         )
         return res
 
